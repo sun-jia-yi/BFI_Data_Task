@@ -7,7 +7,7 @@
 * -------------------------------------------------------------------------------------------------------------------------------- * 
 * Change directory to where the data is located
 * Create new output folder and set global output directory
-global dataFolder "/Users/sunmac/Dropbox/Summer/BFI_Data_Task"
+global dataFolder "/home/jsun50/GitHub/BFI_Data_Task"
 mkdir output
 global outdir "output"
 
@@ -84,6 +84,9 @@ forvalues y = 1/75 {
 * Save the dataset with weights and expand the dimension to match that of a year dataset
 keep index*
 save "$dataFolder/weights.dta"
+clear
+
+use "$dataFolder/Rainfall/rainfall_2009.dta"
 
 count
 set obs `=`r(N)'+ 349804'

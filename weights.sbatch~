@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#SBATCH --job-name=alaskaPFD_married
+#SBATCH --output=married.out
+#SBATCH --error=married.err
+#SBATCH --time=12:00:00
+#SBATCH --partition=bigmem2
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=24
+#SBATCH --mem=256G
+
+module load stata
+cd /home/jsun50/GitHub/BFI_Data_Task
+stata-mp -b do age.do 
