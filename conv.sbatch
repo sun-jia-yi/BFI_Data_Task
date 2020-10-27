@@ -9,4 +9,4 @@
 # cores on a sandyb node
 module load R
 
-R CMD BATCH --no-save --no-restore convergence.R
+R CMD BATCH --no-save --no-restore mnl_choice.R
