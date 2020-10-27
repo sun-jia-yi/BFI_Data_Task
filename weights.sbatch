@@ -1,14 +1,12 @@
 #!/bin/bash
 
-#SBATCH --job-name=alaskaPFD_married
-#SBATCH --output=married.out
-#SBATCH --error=married.err
-#SBATCH --time=12:00:00
-#SBATCH --partition=bigmem2
+#SBATCH --partition=broadwl
 #SBATCH --nodes=1
-#SBATCH --tasks-per-node=24
-#SBATCH --mem=256G
+#SBATCH --ntasks-per-node=16
 
-module load stata
-cd /home/jsun50/GitHub/BFI_Data_Task
-stata-mp -b do weights.do 
+# --ntasks-per-node will be used in doParallel.R to specify the number
+# of cores to use on the machine. Using 16 will allow us to use all
+# cores on a sandyb node
+module load R
+
+R CMD BATCH --no-save --no-restore convergence.R
