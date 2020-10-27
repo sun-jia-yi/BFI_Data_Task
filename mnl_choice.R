@@ -1,5 +1,5 @@
 D <- numeric(5)
-for (q in 1:5) {
+for (q in 1:20) {
 #### initialize ####
 #  set S
 S <- 1: 100
@@ -343,6 +343,6 @@ while (K > 0) {
 D[q] <- max(abs(v_max - v_min))
 }
 
-write.table(D, "~/Documents/GitHub/COVID19Modelling/mnl_choice/copy_d_results.txt", sep="\t")
+write.table(D, "/home/jsun50/GitHub/BFI_Data_Task/copy_d_results.txt", sep="\t")
 max_D = max(D)
-write.table(max_D, "~/Documents/GitHub/COVID19Modelling/mnl_choice/max_d_result.txt", sep="\t")
+write.table(max_D, "/home/jsun50/GitHub/BFI_Data_Task/max_d.txt", sep="\t")
